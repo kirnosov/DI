@@ -40,9 +40,10 @@ sub_chain_mean_sd <- function(nl,num_sim = 1000,sample_size = 1000){
         return(c(mean(Mmean),sd(Mmean)))
 }
 
+
 sub_chain_mean_sd(nl=8,num_sim = 1000,sample_size = 1000)
 # [1] 2.83143900 0.01898986
-sub_chain_mean_sd(nl=16,num_sim = 1000,sample_size = 1000)
-# [1] 5.06698200 0.02658685
-sub_chain_mean_sd(nl=32,num_sim = 1000,sample_size = 1000)
-# [1] 9.37487000 0.03781633
+sub_chain_mean_sd(nl=16,num_sim = 2000,sample_size = 2000)
+# [1] 5.06638025 0.01854437
+sub_chain_mean_sd(nl=32,num_sim = 5000,sample_size = 5000)
+# [1] 9.37496808 0.01712874
