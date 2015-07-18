@@ -1,0 +1,37 @@
+License Agreement
+
+User Notice
+===========
+This is a contract. By downloading this Data you accept all the terms and conditions of this agreement. 
+
+This Hexasoft Development Sdn. Bhd. (the "Company") End User License Agreement accompanies the Company product and related explanatory materials ("Data"). The term "Data" also shall include any upgrades, modified versions or updates of the Software or Database licensed to you by the Company. Please read this Agreement carefully. The use of our products is a declaration that you accept and will abide by this agreement. 
+
+Upon your acceptance of this Agreement, the Company grants to you a nonexclusive license to use the Data, provided that you agree to the following: 
+
+Use of the Data
+===============
+You are licensed to use the "IP2Location-ISO3166-2" on one website for personal or commercial use.
+
+You may install the Data on a hard disk or other storage device; install and use the Data on a file server for use on a network for the purposes of (i) permanent installation onto hard disks or other storage devices or (ii) use of the Data over such network; and make backup copies of the Data.
+
+You may not sublicense, rent, lease or lend the Data. You may make backup copies of the Data, as long as each copy that you make, 1.) has valid license granted by the Company, 2.) is for internal company use, 3.) contains this Agreement and, 4.) contains the same copyright and other proprietary notices pertaining to this Data that appear in the Data.
+
+You agree to not distribute the Data in an unprocessed form or any copy thereof to any other party. You may not make the Data publicly available in easily downloadable format (i.e. Zip files or static HTML pages) on public network such as bulletin boards, online services, or the Internet.
+
+Copyright and Trademark Rights
+==============================
+The Data is owned by the Company, and its structure, organization and code are the valuable trade secrets of the Company. The Data also is protected by Copyright Law and International Treaty provisions. You may use trademarks only insofar as required to comply with Section 1 of this Agreement and to identify printed output produced by the Data, in accordance with accepted trademark practice, including identification of trademark owner's name. Such use of any trademark does not give you any rights of ownership in that trademark. Except as stated above, this Agreement does not grant you any intellectual property rights in the Data. 
+
+Restrictions
+============
+You are free to modify and/or adapt any Data provided in non-compiled form for your own use, reproduction as well as unlimited use within your organization. The Data is licensed and distributed by the Company. Redistribution and reseller agreements can be obtained by contacting the Company. 
+
+No Warranty
+===========
+The Data is being delivered to you AS IS and the Company makes no warranty as to its use or performance. The Company does not and cannot warrant the performance or results you may obtain by using the Data or documentation. The Company makes no warranties, express or implied, as to noninfringement of third party rights, merchantability, or fitness for any particular purpose. in no event will the company be liable to you for any consequential, incidental or special damages, including any lost profits or lost savings, even if a representative of the company has been advised of the possibility of such damages, or for any claim by any third party. Some states or jurisdictions do not allow the exclusion or limitation of incidental, consequential or special damages, or the exclusion of implied warranties or limitations on how long an implied warranty may last, so the above limitations may not apply to you. 
+
+Governing Law and General Provisions
+====================================
+This Agreement will be governed by the laws of the country of Malaysia, excluding the application of its conflicts of law rules. This Agreement will not be governed by the United Nations Convention on Contracts for the International Sale of Goods, the application of which is expressly excluded. If any part of this Agreement is found void and unenforceable, it will not affect the validity of the balance of the Agreement, which shall remain valid and enforceable according to its terms. This Agreement shall automatically terminate upon failure by you to comply with its terms. This Agreement may only be modified in writing signed by an authorized officer of the Company.
+
+This Agreement is binding except in the case where a signed, certified letter is issued by the Company amending the Agreement.
