@@ -40,9 +40,10 @@ weather_forecast <- function(the_date, location, ny=20, level = 0.75,
         weather_data$Events <- replace(weather_data$Events, 
                                        grepl("rain",tolower(weather_data$Events)), "Rain")
         weather_data$Events <- replace(weather_data$Events, 
-                                       grepl("thunder",tolower(weather_data$Events)), "TStorm")
+                                       grepl("thunder",tolower(weather_data$Events)), 
+                                       "Thundertorm")
         weather_data$Events <- as.factor(replace(weather_data$Events, 
-                                                 weather_data$Events=="", "Dry"))
+                                                 weather_data$Events=="", "None"))
         
         ############ Maximum / Minimum temperature prediction #################
         # we will use linear regression to predict
@@ -93,9 +94,11 @@ weather_forecast <- function(the_date, location, ny=20, level = 0.75,
                 frmla = weather_data$Events ~ .
                 
                 # use random forest for prediction
-                modFit <- train(frmla, data = raw, method="rf",trControl=trainControl(
+                modFit <- train(frmla, data = raw, method="rf"
+                                ,trControl=trainControl(
                         method='cv',number=10,
-                        classProbs = TRUE))
+                        classProbs = TRUE)
+                        )
                 # model test looks pleasant (for Tuscon, 7/11/15):
                 # > table(predict(modFit,raw),weather_data$Events)
                 #         Dry Rain TStorm
