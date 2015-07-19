@@ -4,13 +4,23 @@ shinyServer(function(input, output, session) {
         library(ggplot2)
         
         is_same <- function(event_A,event_P){
-                a<- ifelse(grepl(tolower(event_P),tolower(event_A)),1,0)
+                #a<- ifelse(grepl(tolower(event_P),tolower(event_A)),1,0)
+                a<- ifelse(event_A==event_P,1,
+                           ifelse(event_A!="None" & event_P!="None",1,0))
                 return(a)
         }
         
         diff_df <- read.csv("diff_df_pr.csv")[,-1]
         complete_df <- diff_df[complete.cases(diff_df),]
+        complete_df$Precip_A <- as.character(complete_df$Precip_A)
+        complete_df$Precip_P <- as.character(complete_df$Precip_P)
         date="2015-07-11"
+        
+        output$slider <- renderUI({
+                sliderInput("nloc", "Number of locations", 
+                            min = 10, max = nrow(complete_df), value = 200, step = 10,
+                            animate=TRUE)
+        })
 
         output$plotT <- renderPlot({
                 plot_df <- complete_df[1:input$nloc,c(4,5,9)]
@@ -44,14 +54,16 @@ shinyServer(function(input, output, session) {
                         geom_tile(aes(fill=value)) + 
                         scale_fill_gradient(low="white", high="darkblue") + 
                         xlab("Data quality") + ylab("Forecast Probability")+
-                        ggtitle("Precipitation prediction success rate")
+                        ggtitle(paste0("Precipitation prediction success rate (",
+                                       input$nloc," locations)"))
         })
         
         output$plotV <- renderPlot({
                 prec_df <- complete_df[1:input$nloc,c(8,9)]
                 prec_df$Precip <- 0
                 for(i in 1:input$nloc){
-                        prec_df$Precip[i] <- is_same(complete_df$Precip_A[i],complete_df$Precip_P[i])
+                        prec_df$Precip[i] <- is_same(complete_df$Precip_A[i],
+                                                     complete_df$Precip_P[i])
                 }
                 vec_temp <- c(0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0)
                 prec_df$Quality<-cut(prec_df$Quality, vec_temp)
@@ -63,7 +75,8 @@ shinyServer(function(input, output, session) {
                         geom_tile(aes(fill=value)) + 
                         scale_fill_gradient(low="white", high="red") + 
                         xlab("Data quality") + ylab("Forecast Probability")+
-                        ggtitle("Precipitation prediction success rate variance")
+                        ggtitle(paste0("Precipitation prediction success rate variance (",
+                                input$nloc," locations)"))
         })
         
 })

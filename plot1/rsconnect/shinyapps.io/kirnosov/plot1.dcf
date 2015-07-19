@@ -1,8 +1,8 @@
 name: plot1
 account: kirnosov
 server: shinyapps.io
-bundleId: 221790
+bundleId: 222067
 url: https://kirnosov.shinyapps.io/plot1
-when: 1437183529.86196
+when: 1437288436.47867
 asMultiple: FALSE
 asStatic: FALSE

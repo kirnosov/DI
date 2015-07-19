@@ -4,9 +4,9 @@ library(weatherData)
 set.seed(123)
 airports <- read.csv("airports.csv")
 date="2015-07-11"
-sample_size = 300
+sample_size = 547
 if(file.exists("diff_df_pr.csv")){
-        diff_df <- read.csv("diff_df_pr.csv")[,-1]
+        diff_df <- read.csv("./plot1/diff_df_pr.csv")[,-1]
 }else{
         diff_df <- data.frame(matrix(ncol=9,nrow=nrow(airports)))
         colnames(diff_df) <- c("location","max_T","min_T",
@@ -15,6 +15,7 @@ if(file.exists("diff_df_pr.csv")){
         diff_df$location <- airports$ident  
 }
 for (i in sample(1:nrow(diff_df),size=sample_size)){
+#for (i in 1:nrow(diff_df)){
         if(is.na(diff_df$diff_max_T[i])){
                 location=airports$ident[i]
                 actual <- getWeatherForDate(location, date,opt_all_columns = T)
@@ -23,7 +24,7 @@ for (i in sample(1:nrow(diff_df),size=sample_size)){
                 predicted <- weather_forecast(date, location, ny=20, level = 0.75,
                                               predict_temp=TRUE, predict_rain=TRUE, 
                                               make_temp_graph=FALSE)
-                if(predicted$Quality > 0.1 & !is.na(actual$Max_TemperatureF)){
+                if(predicted$Quality > 0.0 & !is.na(actual$Max_TemperatureF)){
                         diff_df$diff_max_T[i] <- predicted$MaxT[1] - actual$Max_TemperatureF
                         diff_df$diff_min_T[i] <- predicted$MinT[1] - actual$Min_TemperatureF
                         diff_df$max_T[i] <- actual$Max_TemperatureF

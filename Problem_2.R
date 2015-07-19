@@ -193,12 +193,13 @@ for(i in 1:length(userid_vec)){
                 }
         }
 }
+# now we have probabilities for individual users.
+# Let's find out average probability.
 
-max(final_df[,6:8]/final_df[,3],na.rm = T)
-# [1] 2
-max(final_df[,9:11]/final_df[,4],na.rm = T)
-# [1] 2
-max(final_df[,12:14]/final_df[,5],na.rm = T)
-# [1] 2
 
-# for example, a person only posts twice: asks a question and then comments on it.
+averages <- colMeans(final_df[,c(-1,-2)],na.rm = TRUE)
+max(averages[1]/averages[4:6],
+    averages[2]/averages[7:9],
+    averages[3]/averages[10:12])
+# 39.0874657
+
